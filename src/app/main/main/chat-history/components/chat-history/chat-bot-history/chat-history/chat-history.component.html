@@ -1,0 +1,122 @@
+<section
+  class="empty col d-flex flex-column justify-content-center h-100 align-items-center gap-3 d-none"
+>
+  <img
+    src=".../../../../.././../../assets/images/empty.svg"
+    width="300px"
+    alt=""
+  />
+  <p class="m-0 coal">Select the conversation to load the messages</p>
+</section>
+<section class="chatitem col" id="chatitem1">
+  <div class="query-container chat-message-component p-0" data-scrollbar="true">
+    <header class="chat-header">
+      <div class="d-flex align-items-center">
+        <span class="iconButton medium bg-white fw-bold">{{
+          InitialsService.getInitials(currentUserName)
+        }}</span>
+        <div class="ms-3">
+          <h6 class="user-status m-0">
+            {{ currentUserName != "" ? currentUserName : chat.session_id }}
+            <!-- <i class="fa fa-circle user-status-icon sun" title="away"></i> -->
+          </h6>
+        </div>
+
+        <span class="iconButton medium ms-auto" id="minbutton"> </span>
+        <span (click)="removeScreen()">
+          <i class="fa-regular fa-times"></i>
+        </span>
+      </div>
+    </header>
+    <!-- <div class="messagewrap suggestions">
+      <div class="messagebody">
+        <ul class="list-inline text-center m-0">
+          <li class="list-inline-item" *ngFor="let tag of chat[1].tags">
+            <span class="tag">{{ tag.tag }}</span>
+          </li>
+        </ul>
+      </div>
+    </div> -->
+    <div
+      class="chatsection"
+      style="overflow: auto"
+      #scrollMe
+      [scrollTop]="scrollMe.scrollHeight"
+    >
+      <div class="main-chat">
+        <div class="chat-box-wrap">
+          <ng-container *ngFor="let msg of chat; let i = index;trackBy: trackChatMessage">
+            <!-- <pre  >{{msg | json}}</pre> -->
+
+            <div
+              class="message-wrap agent-message-wrap"
+              [ngClass]="{
+                right: msg.type === 'human',
+                left: msg.type === 'ai-agent' || msg.type == 'human-agent'
+              }"
+            >
+              <div
+                class="d-flex align-items-center agent-container"
+                [ngClass]="{ 'mb-5': i === chat.length - 1 }"
+              >
+                <div
+                  class="card w-d-inline messageUpper align-items-start"
+                  style="min-width: 250px !important"
+                >
+                  <div class="card-body">
+                    <div class="d-flex msg-user-info">
+                      <div class="d-flex align-items-center w-100">
+                        <h6
+                          class="card-title m-0 me-2 text-truncate"
+                          style="min-width: 100px !important;max-width: 180px !important" [title]='
+                            msg.type === "ai-agent"
+                              ? bot_name
+                              : msg.type === "human-agent"
+                              ? msg.agent_name || "human agent"
+                              : currentUserName != ""
+                              ? currentUserName
+                              : chat.session_id
+                         '
+                        >
+                          {{
+                            msg.type === "ai-agent"
+                              ? bot_name
+                              : msg.type === "human-agent"
+                              ? msg.agent_name || "human agent"
+                              : currentUserName != ""
+                              ? currentUserName
+                              : chat.session_id
+                          }}
+                        </h6>
+                        <!-- <span *ngIf="msg.sentiment == 'Positive'"
+                          ><img src="../../../assets/Images/positive.svg"
+                        /></span>
+                        <span *ngIf="msg.sentiment == 'Negative'"
+                          ><img src="../../../assets/Images/negative.svg"
+                        /></span>
+                        <span *ngIf="msg.sentiment == 'Neutral'"
+                          ><img src="../../../assets/Images/neutral.svg"
+                        /></span> -->
+                        <small
+                          class="silver ms-auto"
+                          style="min-width: 80px !important"
+                        >
+                          &nbsp;&nbsp;{{ msg.timestamp }}</small
+                        >
+                      </div>
+                    </div>
+                    <p class="card-text nignt">
+                      <markdown
+                      [attr.dir]="isArabic(msg.text) ? 'rtl' : 'ltr'"
+                       [data]="msg.text"></markdown>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

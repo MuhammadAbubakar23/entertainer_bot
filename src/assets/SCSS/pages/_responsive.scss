@@ -1,0 +1,24 @@
+@media (max-width: 575px) {
+  .login-form{
+    padding:  0 24px;
+  }
+}
+@media (max-width: 1400px) {
+  #left-sidebar-expand.botleft {
+    min-width: 300px;
+    max-width: 300px;
+  }
+  .knowledgebase .aiactions .btn {
+    min-width: 60px;
+    font-size: 13px;
+}
+.knowledgebase {
+  padding: 12px;
+}
+}
+@media (min-width: 1600px) {
+  #left-sidebar-expand.botleft {
+    min-width: 420px;
+    max-width: 420px;
+}
+}

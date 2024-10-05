@@ -1,0 +1,177 @@
+<header class="main-header shadow-sm agent-header">
+  <div class="row justify-content-between">
+    <div class="col-lg-6">
+      <div class="dashboard-header-left d-flex align-items-center">
+        <button class="iconButton medium">
+          <i [ngClass]="headerData.class"></i>
+        </button>
+        <nav>
+          <ol class="breadcrumb m-0">
+            <li class="breadcrumb-item active" style="margin-right: 20px">
+              <span class="me-2" [innerHTML]="headerData.icon"> </span>
+              <a
+                *ngIf="headerData.tabs[0]?.url; else noUrl"
+                (click)="navigateTab(headerData.tabs[0].url)"
+                >{{ headerData.title }}</a
+              >
+              <ng-template #noUrl>
+                <a>{{ headerData.title }}</a>
+              </ng-template>
+            </li>
+            <li *ngIf="!headerData.isTab">
+              <ng-container
+                *ngIf="
+                  headerData && headerData.tabs && headerData.tabs.length > 0
+                "
+              >
+                <a routerLink="{{ headerData.tabs[0].url }}">{{
+                  headerData.tabs[0].title
+                }}</a>
+              </ng-container>
+            </li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+    <div class="col-lg-6 col-sm-6">
+      <div class="right-header-components">
+        <div id="bd-theme" class="dropdown-center w-auto me-4 themedd">
+          <button
+            class="iconButton medium bg-light"
+            type="button"
+            id="bd-theme-text"
+            aria-haspopup="true"
+            aria-expanded="false"
+            data-bs-toggle="dropdown"
+          >
+            <i class="fa-light fa-sun-bright"></i>
+          </button>
+
+          <div class="dropdown-menu" aria-labelledby="bd-theme-text">
+            <button
+              class="dropdown-item"
+              data-bs-theme-value="light"
+              (click)="changeColors('light')"
+            >
+              <i class="fa-light fa-sun-bright"></i> Light
+            </button>
+            <button
+              class="dropdown-item"
+              data-bs-theme-value="dark"
+              (click)="changeColors('dark')"
+            >
+              <i class="fa-light fa-moon"></i> Dark
+            </button>
+          </div>
+        </div>
+
+        <ng-container *ngIf="email === 'admin@ibex.co'">
+          <span
+            aria-label="Open Menu Chat"
+            data-balloon-pos="down"
+            *ngIf="headerData.title === 'Bot Interactions'"
+            [ngClass]="{
+              'iconButton medium iconHover notification me-2 showbots': true,
+              active: menuWidget
+            }"
+            data-bs-toggle="button"
+            data-bs-placement="bottom"
+            data-bs-title="Bot"
+            aria-pressed="false"
+            (click)="showMenuChatWidget()"
+          >
+            <i class="fa-regular fa-comments"></i
+          ></span>
+        </ng-container>
+        <!-- <span
+          aria-label="Open Generative Chat"
+          data-balloon-pos="down"
+          *ngIf="
+            headerData.title === 'Bot Interactions' ||
+            headerData.title === 'Human Interactions' ||
+            headerData.title === 'Human Agent Takeover'
+          "
+          [ngClass]="{
+            'iconButton medium iconHover notification me-2 showbots': true,
+            active: isWidget
+          }"
+          data-bs-toggle="button"
+          data-bs-placement="bottom"
+          data-bs-title="Bot"
+          aria-pressed="false"
+          (click)="showChatWidget2()"
+        >
+          <i class="fa-regular fa-comments"></i
+        ></span> -->
+
+        <div class="dropdown custom-dropdown-list w-auto">
+          <a
+            class="link-dark text-decoration-none dropdown-toggle align-items-center gap-2"
+            id="dropdownUser1"
+            data-bs-toggle="dropdown"
+            aria-expanded="true"
+          >
+            <!-- <img src="https://github.com/mdo.png" alt="mdo" width="40" height="40" class="rounded-circle"> -->
+            <div class="iconButton medium night berryTransBg fw-bold">
+              {{ getInitials(username) }}
+            </div>
+
+            <span class="online-n-offline"></span>
+            <div class="name-n-info">
+              <span class="name">{{ username }}</span>
+              <!-- <small>1:23:59</small> -->
+            </div>
+          </a>
+          <ul
+            class="dropdown-menu full_dropdown p-0 text-small user-profile-dropdown shadow"
+            aria-labelledby="dropdownUser1"
+            style="
+              position: absolute;
+              inset: 0px auto auto 0px;
+              margin: 0px;
+              transform: translate(-162px, 52px);
+            "
+            data-popper-placement="bottom-start"
+          >
+            <li class="user-dropdown-header dropdown-header">
+              <ul>
+                <li>
+                  <a
+                    class="link-dark text-decoration-none"
+                    id="dropdownUser1"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <!-- <img src="https://github.com/mdo.png" class="profile-pic rounded-circle" alt="mdo" width="50" height="50"> -->
+                    <div class="iconButton medium night berryTransBg fw-bold">
+                      {{ getInitials(username) }}
+                    </div>
+                    <span class="online-n-offline on-off-btn"></span>
+                    <div class="name-n-info lh-sm">
+                      <h6 class="night m-0">{{ username }}</h6>
+                      <!-- <small>{{username}}</small> -->
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="card-footer dropdown-footer p-2">
+              <ul class="w-100">
+                <li>
+                  <div class="w-100">
+                    <a
+                      class="btn radicalBg text-center d-block"
+                      (click)="signOut()"
+                      >Sign Out</a
+                    >
+                  </div>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

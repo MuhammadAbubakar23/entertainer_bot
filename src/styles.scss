@@ -1,0 +1,333 @@
+/* You can add global styles to this file, and also import other style files */
+// @import "./assets/CSS/bot-monitoring.scss";\
+@import "~@ng-select/ng-select/themes/default.theme.css";
+// ... or 
+@import "~@ng-select/ng-select/themes/material.theme.css";
+@import "./assets/CSS/toast.css";
+@import "./assets/CSS/chat-widget.css";
+@import "./assets/SCSS/pages/responsive";
+// @import "./assets/CSS/main-355b0db1f7.css";
+// @import "./assets/CSS/main-6cc24a76ec.css";
+// @import "./assets/CSS/main-7564bfce29.css";
+// @import "./assets/CSS/bot-monitoring.css";
+// @import "./assets/scss/base/typography";
+@import "./assets/scss/base/base.scss";
+@import "../node_modules/bootstrap/scss/functions";
+@import "./assets/SCSS/_bootstrap-variables.scss";
+@import "../node_modules/bootstrap/scss/_variables.scss";
+@import "../node_modules/bootstrap/scss/_mixins.scss";
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+@import "../node_modules/select2/src/scss/core.scss";
+//colors
+@import "./assets/SCSS/colors/_colors.scss";
+@import "./assets/SCSS/colors/_colors-classes.scss";
+//bot-monitoring
+@import "./assets/SCSS/components/bot-monitoring.scss";
+//Typography
+@import "./assets/SCSS/base/_typography.scss";
+//Mixins
+@import "./assets/SCSS/mixins/mixins.scss";
+//Base
+@import "./assets/SCSS/base/base.scss";
+//Layouts
+@import "assets/SCSS/layouts/header.scss";
+@import "./assets/SCSS/layouts/footer.scss";
+@import "./assets/SCSS/layouts/search-bar.scss";
+//Components
+@import "./assets/SCSS/components/avatar.scss";
+@import "./assets/SCSS/components/breadcrumb.scss";
+@import "./assets/SCSS/components/bootstrap-classes.scss";
+@import "./assets/SCSS/components/bootstrap-variables.scss";
+@import "./assets/SCSS/components/buttons.scss";
+@import "./assets/SCSS/components/carousel.scss";
+@import "./assets/SCSS/components/dropdown.scss";
+@import "./assets/SCSS/components/right-side-bar.scss";
+@import "./assets/SCSS/components/leftbar.scss";
+@import "./assets/SCSS/components/rightbar.scss";
+@import "./assets/SCSS/components/modal.scss";
+@import "./assets/SCSS/components/sidebar.scss";
+@import "./assets/SCSS/components/select2.scss";
+@import "./assets/SCSS/components/toast.scss";
+@import "./assets/SCSS/components/off-canvas.scss";
+@import "./assets/SCSS/components/list.scss";
+@import "./assets/SCSS/components/table.scss";
+@import "./assets/SCSS/components/toggle-wrap.scss";
+@import "./assets/SCSS/components/bootstrap-classes.scss";
+@import "./assets/SCSS/components/chat-message.scss";
+@import "./assets/SCSS/components/tooltip.scss";
+@import "./assets/SCSS/components/searchbar.scss";
+@import "./assets/SCSS/components/carousel.scss";
+@import "./assets/SCSS/components/facebook-reactions.scss";
+@import "./assets/SCSS/components/tags-pills.scss";
+@import "./assets/SCSS/components/email-chat.scss";
+@import "./assets/SCSS/components/offcanvas.scss";
+@import "./assets/SCSS/components/chat-room.scss";
+@import "./assets/SCSS/components/mark-as.scss";
+@import "./assets/SCSS/components/contact-merge.scss";
+@import "./assets/SCSS/components/score-card.scss";
+@import "./assets/SCSS/chat-widget.css";
+//Pages CSS
+@import "./assets/SCSS/pages/login.scss";
+@import "./assets/SCSS/pages/team-user.scss";
+@import "./assets/SCSS/pages/create-business-hour.scss";
+@import "./assets/SCSS/pages/sla-polices.scss";
+@import "./assets/SCSS/pages/dashboard.scss";
+@import "./assets/SCSS/pages/console-page.scss";
+@import "./assets/SCSS/pages/console-landing.scss";
+@import "./assets/SCSS/pages/dialer.scss";
+@import "./assets/SCSS/pages/analytics.scss";
+@import "./assets/SCSS/pages/chatbot.scss";
+@import "./assets/SCSS/pages/ke.scss";
+@import "./assets/SCSS/chat-widget.css";
+// html, body { height: 100%; }
+// body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+//font-awesome6
+// @import "./assets/SCSS/font-awesome-6/fontawesome.scss";
+// @import "./assets/SCSS/font-awesome-6/brands.scss";
+// @import "./assets/SCSS/font-awesome-6/light.scss";
+// @import "./assets/SCSS/font-awesome-6/solid.scss";
+// @import "./assets/SCSS/font-awesome-6/thin.scss";
+// @import "./assets/SCSS/font-awesome-6/regular.scss";
+
+@import "./assets/SCSS/web-dialer/web-dialer.scss";
+
+// Import ng-select component styles
+@import "~@ng-select/ng-select/themes/default.theme.css";
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: #eee;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #c5c5c5;
+  border-radius: 15px !important;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #979797;
+}
+
+.ng-dropdown-panel .ng-dropdown-panel-items .ng-option {
+  border-radius: 4px;
+  padding: 15px;
+  background-color: #fff;
+}
+ for model only
+.modal-backdrop {
+  // z-index: 0000;
+}
+.modal {
+  z-index: 1050;
+}
+.icon-circle {
+  min-width: 90px;
+  width: 90px;
+  height: 90px;
+  background-color: #e6f3f4;
+  color: #34b3bc;
+  font-size: 36px;
+}
+.modal .modal-content {
+  border-radius: 0px;
+}
+.modal .modal-content .modal-header .h5,
+.modal .modal-content .modal-header h5 {
+  font-size: 1.25rem;
+}
+.modal-title {
+  margin-bottom: 0;
+  line-height: 1.5;
+}
+.gif-dropdown {
+  width: 650px;
+   right: 0 !important;
+   left: auto !important;
+   .gif-container{
+     display: flex;
+     flex-wrap: wrap;
+     .gif-item {
+       flex: 0 0 23%;
+   }
+ }
+ .dropdown-listing {
+   overflow: scroll;
+   height: 400px;
+ }
+ .webchatbg {
+  background-color: #6e2585!important;
+  color: #fff;
+}
+.instabg{
+  background-image: linear-gradient(45deg,#405de6,#5851db,#833ab4,#c13584,#e1306c,#fd1d1d);
+  color: #fff;
+}
+.fb-messenger{
+  background: radial-gradient(circle at 33% 100%, #167AFF, #9F33FF, #FF6070);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.insta-messenger{
+  background: radial-gradient(circle at 33% 100%, #405de6,#5851db,#833ab4,#c13584,#e1306c,#fd1d1d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.linkedinbg{
+  background-color: #0a66c2!important;
+  color: #fff;
+
+}
+.googleplaybg{
+  background-color: #00a173!important;
+  color: #fff;
+}
+.whiteBg {
+  background-color: #fff!important;
+}
+.active{
+  background-color: rgb(240, 237, 237);
+  color: black;
+}
+.enteract-gradient {
+  background-image: -webkit-linear-gradient(6deg,#fa8e6f,#f6428b);
+  background-image: -webkit-linear-gradient(84deg,#fa8e6f,#f6428b);
+  background-image: linear-gradient(6deg,#fa8e6f,#f6428b);
+}
+
+}
+.ngx-spinner-overlay{
+  background-color: rgba(0,0,0,0.25) !important;
+} 
+
+@import "./assets/SCSS/pages/theme.scss";
+
+.analytics-dashboard {
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: calc(100vh - 80px);
+    padding-right: 10px;
+}
+.analytics-dashboard::-webkit-scrollbar {
+    width: 10px;
+  }
+   
+  .analytics-dashboard::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+  }
+   
+  .analytics-dashboard::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+  }
+  .chatbot-main .chat-message-component{
+    height: 100%;
+  }
+  .modal-backdrop{
+    z-index: 3;
+  }
+
+  .sentimentcard .mintTransBg {
+    background-color: rgba(59, 214, 146, .2) !important
+ }
+ 
+ .sentimentcard .radicalTransBg {
+    background-color: rgba(255, 80, 92, .2) !important
+ }
+ 
+ .sentimentcard .mangoTransBg {
+    background-color: rgba(255, 167, 35, .2) !important
+ }
+ 
+ .custom-scroll {
+    height: -webkit-calc(100vh - 70px);
+    height: calc(100vh - 70px)
+ }
+ 
+ .newbtn {
+    line-height: 44px !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important
+ }
+ 
+ .fs-12 {
+    font-size: 12px !important
+ }
+ 
+ .daterangepicker {
+    position: relative
+ }
+ 
+ .daterangepicker i {
+    position: absolute;
+    left: 10px;
+    top: 10px
+ }
+ 
+ .daterangepicker input {
+    padding: .375rem .75rem .375rem 2rem;
+    min-width: 180px;
+    max-width: 180px
+ }
+ 
+ .onerowcad .h6,
+ .onerowcad h6 {
+    min-height: 36px
+ }
+ 
+ @media only screen and (max-width:1400px) {
+ 
+    .onerowcad .h6,
+    .onerowcad h6 {
+       font-size: .85rem
+    }
+ }
+ 
+ @media only screen and (max-width:1400px) {
+    .onerowcad .card-body {
+       padding: .5rem
+    }
+ }
+ #left-sidebar-expand ul.list-group.console-list{ 
+  ul{
+    margin-top: 8px;
+   > li{
+      background: rgb(255 255 255 / 54%);
+      border-radius: 8px;
+    }
+  }
+  li.active{
+    background-color: rgb(240, 237, 237);
+    border: 1px solid rgb(84, 84, 251);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+  }
+  >li{
+    margin-bottom: 8px;
+    &:hover{
+      border-radius: 8px;
+    }
+  }
+
+ }
+
+ .perfect-scrollbar {
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: calc(100vh - 80px);
+  padding-right: 10px;
+}
+.perfect-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+ 
+.perfect-scrollbar::-webkit-scrollbar-track {
+  background-color: #d1d1d1;
+}
+ 
+.perfect-scrollbar::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+}

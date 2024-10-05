@@ -1,0 +1,34 @@
+<div id="leftBarWrapper">
+    
+  <div class="logo">
+    <a>
+        <p class="logoText">
+            <img src="../../../../assets/tailwind/images/logo.svg" style="width: 34px !important; height:19px !important" alt="...">
+        </p>
+        <p class="logoText">
+            <img src="../../../../assets/tailwind/images/logo.svg" style="width: 34px !important; height:19px !important" alt="...">
+        </p>
+    </a>
+</div>
+  <div class="leftBarDivider" ></div>
+   
+        <ul class="list-group agent_nav_bar mt-10" id="agent-list">
+          <a
+            *ngFor="let menu of menus; let i = index"
+            (click)="activeMenu(i, menu.name)"
+            [routerLink]="[menu.link]"
+            [ngClass]="{ active: activeIndex === i }"
+            class="list-group-item"
+          >
+ 
+              <div class="menu-icon">
+                <i [ngClass]="getFilteredIconClasses(menu.icon)"></i>
+              </div>
+              <div class="itemLabel ">
+                {{ menu.name }}
+              </div>
+          
+          </a>
+         
+        </ul>
+</div>

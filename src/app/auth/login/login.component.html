@@ -1,0 +1,267 @@
+<!-- <div id="signupWrapper">
+  
+    <aside>
+      <div class="left-body">
+        <div class="logo mb-5">
+          <img src="./images/ibex-enteract-engage.svg" width="300" alt="" />
+        </div>
+  
+        <div class="iconsbox">
+          <span class="iconButton iconfacebook">
+            <i class="fa-brands fa-facebook-f"></i
+          ></span>
+          <span class="iconButton icontiktok">
+            <i class="fa-light fa-files"></i
+          ></span>
+          <span class="iconButton icontwitter d-none">
+            <i class="fa-brands fa-twitter"></i
+          ></span>
+          <span class="iconButton iconwhatsapp"
+            ><i class="fa-brands fa-whatsapp"></i
+          ></span>
+          <span class="iconButton icongoogle">
+            <i class="fa-brands fa-google"></i
+          ></span>
+          <span class="iconButton iconyoutube">
+            <i class="fa-brands fa-youtube"></i
+          ></span>
+          <span class="iconButton iconlinkedin"
+            ><i class="fa-brands fa-linkedin-in"></i
+          ></span>
+          <span class="iconButton iconinstagram">
+            <i class="fa-brands fa-instagram"></i
+          ></span>
+        </div>
+        <div class="illustration">
+          <img src=" ../../../../../assets/Images/illustration.svg" alt="image" />
+        </div>
+      </div>
+  
+      <div class="circlebg topleft"></div>
+      <div class="circlebg bottomright"><p></p></div>
+    </aside>
+    <div class="main-body">
+      <div class="login-form main-login-form agentExtensionWrapper">
+        <h4>Glad to see you again!</h4>
+        <h6 class="coal mb-5">Login with your credentials</h6>
+        <div class="form w-100">
+          <form [formGroup]="loginForm" (submit)="onSubmit()">
+            <div class="form-floating mb-2">
+              <input
+                class="form-control"
+                [class.is-invalid]="
+                  lF['userName'].invalid && lF['userName'].touched
+                "
+                [class.is-valid]="lF['userName'].valid && lF['userName'].touched"
+                id="register-username"
+                formControlName="userName"
+              />
+              <label for="register-username">Username </label>
+              <div class="invalid-feedback">Please enter a username</div>
+              <div class="valid-feedback">Looks good!</div>
+            </div>
+            <div class="form-floating mb-3">
+              <input
+                [type]="show ? 'text' : 'password'"
+                class="form-control"
+                [class.is-invalid]="
+                  lF['password'].invalid && lF['password'].touched
+                "
+                [class.is-valid]="lF['password'].valid && lF['password'].touched"
+                id="floatingInputPassword"
+                formControlName="password"
+              />
+              <i
+                style="float: right; margin-top: -30px; margin-right: 30px"
+                [class]="show ? 'fa fa-eye' : 'fa fa-eye-slash'"
+                (click)="password()"
+              ></i>
+              <label for="floatingInputPassword">Password</label>
+              <div class="invalid-feedback">Please enter a Password</div>
+              <div class="valid-feedback">Looks good!</div>
+            </div>
+            <div class="form-btn">
+              <button
+                type="submit"
+                class="w-100 btn loginbtn"
+                id="loginBtn"
+                tabindex="-1"
+                role="button"
+              >
+                Login
+              </button>
+            </div>
+          </form>
+  
+          <div class="col-12 d-flex justify-content-between mb-4">
+          </div>
+  
+          <div class="dropdown-center another-account-accordion d-none">
+            <button
+              class="btn btn-secondary dropdown-toggle"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <i class="fa-light fa-circle-user pe-3"></i>
+              Use Another Accont
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+   -->
+
+   <ngx-spinner
+  bdColor="rgba(0, 0, 0, 0.8)"
+  size="medium"
+  color="#fff"
+  type="ball-clip-rotate"
+  [fullScreen]="true"
+>
+  <p style="color: white">Loading...</p>
+</ngx-spinner>
+<div
+  class="auth__wrapp h-100vh d-flex align-items-center justify-content-center flex-column overflow-hidden py-5">
+  <div class="bgimg" style="background-image:url('../../../assets/images/gradient-background.png');"></div>
+  <div class="auth__block loginblock">
+    <div class="auth__header text-center d-flex flex-column align-items-center">
+     <div class="mb-1"> <img
+        src="../../../assets/tailwind/images/entract-logo.svg"
+        width="234"
+        height="28"
+        alt="Engage"
+      />
+</div>
+      <h1 class=" font-medium text-black ">Hello again!</h1>
+      <p class=" text-secondary">Login with your enteract credentials.</p>
+    </div>
+
+    <div class="auth__body mt-4 pt-4 w-100">
+      <form
+        method="POST"
+        class="d-flex align-items-center flex-column gap-3 w-100"
+        [formGroup]="loginForm"
+        method="POST"
+        [formGroup]="loginForm" (keydown.enter)="onSubmit()" (submit)="onSubmit()"
+      >
+        <div class="input_group position-relative w-100">
+          <i class="fa-light fa-envelope position-absolute"></i>
+          <!-- <input
+            formControlName="userName"
+            type="text"
+            name="email"
+            id="email"
+            class="form-control "
+            placeholder="Username or Email"
+          /> -->
+          <input
+          class="form-control"
+          [class.is-invalid]="
+            lF['userName'].invalid && lF['userName'].touched
+          "
+          [class.is-valid]="lF['userName'].valid && lF['userName'].touched"
+          id="register-username"
+          formControlName="userName"
+          placeholder="Username or Email"
+        />
+          <div class="error__message text-error "></div>
+        </div>
+        <div class="input_group position-relative w-100">
+          <i class="fa-light fa-lock-keyhole position-absolute"></i>
+          <!-- <input
+            formControlName="password"
+            type="password"
+            name="password"
+            id="password"
+            class="form-control "
+            placeholder="Password"
+          /> -->
+          <input
+          [type]="show ? 'text' : 'password'"
+          class="form-control"
+          [class.is-invalid]="
+            lF['password'].invalid && lF['password'].touched
+          "
+          [class.is-valid]="lF['password'].valid && lF['password'].touched"
+          id="floatingInputPassword"
+          formControlName="password"
+          placeholder="Password"
+        />
+          <div class="error__message text-error "></div>
+        </div>
+        <!-- <div class="d-flex justify-content-between align-items-center w-100 mb-3">
+          <label class="d-flex align-items-center gap-2 cursor-pointer">
+            <input
+              type="checkbox"
+              name="remember"
+              id="remember"
+              class="common__checkbox"
+            />
+            <span class=" text-para">Remember me</span>
+          </label>
+
+          <a  class="text-error "> Forgot Password?</a>
+        </div> -->
+          <button
+            type="submit"
+            class="btn btn-primary btn-lg loginbtn"
+            id="loginBtn"
+            tabindex="-1"
+            role="button"
+          >
+            Login
+          </button>
+        <!-- <button
+          class="btn btn-primary btn-lg loginbtn"
+          type="button"
+          id="validate_user"
+          (keydown.enter)="onSubmit()" (submit)="onSubmit()"
+          [disabled]="loginForm.invalid"
+        >
+          Sign In
+        </button> -->
+      </form>
+    </div>
+  </div>
+  <div class="text-center position-relative z-index-1 mt-auto">
+    <a  class="text-para  mx-2">Technical Support</a>
+    <span class="text-para">|</span>
+    <a  class="text-para  mx-2">Privacy Policy</a>
+    <span class="text-para">|</span>
+    <a  class="text-para  mx-2">Terms & Conditions</a>
+    <p class="text-secondary  mt-2">2024 All Rights Reserved.</p>
+  </div>
+</div>
+
+<!-- <div
+  class="position-fixed toast-bar border-0 shadow-sm rounded navyBg"
+  style="z-index: 999999"
+>
+  <div
+    [ngClass]="toastermessage == true ? 'show' : 'hide'"
+    class="toast border-0 p-2 h-100 navyBg fade"
+    role="alert"
+    aria-live="assertive"
+    aria-atomic="true"
+  >
+    <div
+      class="d-flex border-0 justify-content-between align-items-center w-100 h-100"
+    >
+      <p class="toast-line-para ice m-0">{{ AlterMsg }}</p>
+      <div class="toast-btn d-flex align-items-center">
+        <button
+          type="button"
+          class="btn m-0 ms-2"
+          aria-label="Close"
+          data-bs-dismiss="toast"
+          (click)="closeToaster()"
+        >
+          <i class="fal fa-times"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div> -->
+

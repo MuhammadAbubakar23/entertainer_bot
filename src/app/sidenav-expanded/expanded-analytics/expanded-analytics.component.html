@@ -1,0 +1,56 @@
+<nav  id="left-sidebar-expand" class="botleft">
+  <div class="multiple-screens secondary-bg">
+    <div id="all-inboxes-wrapper secondary-bg">
+      <div class="collapsible__header p-3">
+        <h3 class="fw-bold mt-3 ms-1">
+          <a>Analytics</a>
+        </h3>
+      </div>
+      <ul class="list-group list-group-flush" data-scrollbar="true" tabindex="-1"
+        style="overflow: hidden; outline: none;">
+        <div class="scroll-content">
+
+          <!-- <li class="list-group-item list-group-item-action" [ngClass]="{
+          'collapsed': expandedIndex !== i,
+          'background': activeParentIndex === i && menu.subMenu == null
+        }" *ngFor="let menu of subMenus; let i = index">
+            <a class="d-flex align-items-center" [routerLink]="menu.link ? ['analytics', menu.link] : null"
+              [ngClass]="menu.isChild ? 'chevron-icon' : ''" type="button" (click)="toggleCollapse(i)">
+              <i [ngClass]="menu.icon"></i>
+              {{ menu['name'] }}
+            </a>
+          </li> -->
+
+          <a class="all-inboxes-menu list-group-item list-group-item-action" *ngFor="let menu of subMenus; let i = index"
+            [class.active] =  "activeParentIndex == i" [routerLink]="menu.link ? ['analytics', menu.link] : null" (click)="toggleCollapse(i)">
+              <div class="iconButton medium" type="button" ><i [ngClass]="menu.icon"></i></div>
+              <div class="ms-2 me-auto">
+                <div class="font-regular">{{menu['name']=='Analytics'? 'Conversations':menu['name']=='Dashboard'?'Sessions':menu['name'] }}</div>
+              </div>
+            </a>
+            <!-- <a class="all-inboxes-menu list-group-item list-group-item-action" *ngFor="let channel of allSkills"
+              (click)="updateWing(channel.skilSlug)" [class.active]="activeChannel == channel.skilSlug"
+              [routerLink]="['/all-inboxes/'+flag+'/'+channel.skilSlug]">
+              <div class="iconButton medium"  [innerHTML]="channel.icon ">
+              </div>
+              <div class="ms-2 me-auto">
+                <div class="font-regular">{{channel.skillName}}</div>
+                <small class="font-regular text-sub">{{channel.wing | camelCase}}</small>
+              </div>
+            </a> -->
+
+
+        </div>
+        <div class="scrollbar-track scrollbar-track-x" style="display: none;">
+          <div class="scrollbar-thumb scrollbar-thumb-x" style="width: 293px; transform: translate3d(0px, 0px, 0px);">
+          </div>
+        </div>
+        <div class="scrollbar-track scrollbar-track-y" style="display: none;">
+          <div class="scrollbar-thumb scrollbar-thumb-y" style="height: 221px; transform: translate3d(0px, 0px, 0px);">
+          </div>
+        </div>
+      </ul>
+    </div>
+  </div>
+  <a (click)="toggleNavTest()" class="panelToggle"></a>
+</nav>
